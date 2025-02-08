@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/TAH.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>Tasks-At-Hand</title>
+</head>
+<body>
+    <header>
+        <main class="header-words">
+            <h5>Hello, Karina</h5>
+            <h1>Your Projects (4)</h1>
+        </main>
+
+        <main class="header-img">
+            <img src="./assets/89171bfb4f3ddcc0a50d12f88f0e5663.jpg" alt="profile-pic">
+        </main>
+    </header>
+
+    <section id="projects-container">
+
+        <div class="projects">
+            <main class="outer-projects">
+                <h1><a href="">Holiday in Norway</a></h1>
+
+         <article class="inner-projects">
+                  <progress value="8" max="10"></progress>
+                  <h3>8/10 <br> <span>tasks</span></h3>
+                  
+                </article>
+                
+                <div class="buttons">
+                    <button type="button" class="dBtn" id="dBtn"><i class="fa-solid fa-ellipsis"></i></button>
+                    <button type="button" class="addItems" id="addItems"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                
+                <div class="dropdown" id="dropdown">
+                    <ul class="dropdown-items">
+                        <li class="dropdown-links"><button id="bglink"><a href="#">Edit Background</a></button></li>
+                        <li class="dropdown-links"><button id="ptlink"><a href="#">Edit Project Title</a></button></li>
+                        <li class="dropdown-links"><button id="dplink"><a href="#">Delete Project</a></button></li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+
+        <div class="projects">
+            <main class="outer-projects">
+                <h1><a href="">Holiday in Norway</a></h1>
+
+         <article class="inner-projects">
+                  <progress value="8" max="10"></progress>
+                  <h3>8/10 <br> <span>tasks</span></h3>
+                  
+                </article>
+                
+                <div class="buttons">
+                    <button type="button" class="dBtn" id="dBtn"><i class="fa-solid fa-ellipsis"></i></button>
+                    <button type="button" class="addItems" id="addItems"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                
+                <div class="dropdown" id="dropdown">
+                    <ul class="dropdown-items">
+                        <li class="dropdown-links"><button id="bglink"><a href="#">Edit Background</a></button></li>
+                        <li class="dropdown-links"><button id="ptlink"><a href="#">Edit Project Title</a></button></li>
+                        <li class="dropdown-links"><button id="dplink"><a href="#">Delete Project</a></button></li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <div class="MyModal" id="editBGModal">
+        <span><button id="close"><i class="fa-solid fa-x"></i></button></span>
+        <h1>Edit Background</h1>
+        <div id="editBGContent">
+            <div class="tabs">
+                <button id="tab-links" onclick="openPage('BGColor')" class="tab-links active">Background Color</button>
+                <button id="tab-links" onclick="openPage('BGImage')" class="tab-links">Background Image</button>
+            </div>
+            
+            <div id="BGColor" class="tab-content">
+                <form action="/" method="post" id="color">
+                    <label for="color">Select Color:</label>
+                    <input type="color" name="colorPalette" id="colorPalette">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <div id="BGImage" class="tab-content">
+                <h1>Upload your Background Image</h1>
+                <figure>
+                    <img src="./assets/360_F_460013622_6xF8uN6ubMvLx0tAJECBHfKPoNOR5cRa.jpg" alt="demoPhoto" id="demoPhoto">
+                    <figcaption id="demoName">No image available</figcaption>
+                </figure>
+                <form action="/" method="post" id="image">
+                    <input type="file" name="imageFile" id="imageFile" accept="image/*">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="MyModal" id="editTitle">
+        <span><button id="close"><i class="fa-solid fa-x"></i></button></span>
+        <h1>Edit Project Title</h1>
+        <div id="editTitleContent">
+            <form action="/" method="post" id="title">
+                <label for="projectTitle">New Project Title</label>
+                <input type="text" name="projectTitle" id="projectTitle" placeholder="Enter your new project title">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="MyModal" id="deleteProject">
+        <span><button id="close"><i class="fa-solid fa-x"></i></button></span>
+        <h1>Delete Project</h1>
+        <div id="deleteProjectContent">
+            <h1>Are you sure you want to Delete this Project?</h1>
+            <div id="answerbuttons">
+                <button id="yes" value="yes">Yes</button>
+                <button id="no" value="no">No</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="MyModal" id="addTask">
+        <span><button id="close"><i class="fa-solid fa-x"></i></button></span>
+        <h1>New Task</h1>
+        <div id="task-content">
+            <form action="/" method="post" id="task">
+                <label for="taskTitle">Tasks</label>
+                <input type="text" name="taskTitle" id="taskTitle" placeholder="Task Title">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="util.js"></script>
+</body>
+</html>
